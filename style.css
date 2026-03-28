@@ -1,0 +1,266 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+html{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+}
+:root{
+    --bg-color:#fff8f0;
+    --bg-button-color:#ffd6e0;
+    --bg-task-color:#fff1c1;
+    --primary-color:#000000;
+    --delete-color:#c1f0ff;
+    --hover-color: #c1f0ff; 
+    /*padding*/
+    --nav-padding: 15px 30px;
+    --section-padding: 15px 30px;
+    --padding-s:5px;
+    --padding-m:10px;   
+    --padding-l:15px;
+    --padding-xl:20px;
+    --padding-xxl:30px;
+    /* border radius variables*/
+        --border-radius-s: 5px;
+        --border-radius-m: 10px;
+        --border-radius-l: 15px;
+        --border-radius-xl: 20px;
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+main{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+}
+nav{
+    padding: var(--nav-padding);
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav button:hover{
+     background-color: #ffc1d6;
+    background-color: var(--bg-button-color);
+    border: none;
+    outline: none;
+    color: var(--primary-color);
+    padding: var(--padding-l) var(--padding-m);
+    cursor: pointer;
+    border-radius: var(--border-radius-m); 
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+section{
+    
+    padding: var(--section-padding);
+    display:flex;
+    flex-grow: 1; 
+    justify-content:space-between;
+    background-color:var(--bg-color);
+    gap: var(--padding-xxl);
+
+}
+section .task-column{
+    background-color: var(--bg-button-color);
+    flex-grow: 1;
+    
+    padding: var(--padding-m);
+    display: flex ;
+    width: 100%;
+    flex-direction: column;
+    gap: var(--padding-m);
+    border-radius: var(--border-radius-m);
+    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+
+}
+section .task-column.hover-over{
+    border: 2px dashed var(--primary-color);
+    scale: 1.05;
+    background-color: var(--hover-color);
+    transform: scale(1.03);
+}
+}
+section .task-column .heading{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}   
+section .task-column .task{
+    background-color: var(--bg-task-color);
+    padding: var(--padding-m);
+    border-radius: var(--border-radius-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--border-radius-s);
+    cursor: grabbing;
+}
+section .task-column .task button{
+    align-self: flex-end;
+    cursor: pointer;
+    padding: var(--padding-s) var(--padding-m);
+    border-radius:var(--border-radius-s);
+    border: none ;
+    outline: none;
+    background-color: var(--delete-color);
+    color: var(--primary-color);
+}
+
+/*modal design*/
+.modal{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.modal.active{
+    display: flex;
+}
+
+.modal .bg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(61, 61 ,61,0.404);
+    backdrop-filter: blur(5px);
+}
+.modal .center{
+    background-color: var(--bg-button-color);
+    padding: var(--padding-xxl);
+    border-radius: var(--border-radius-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-m);
+    z-index: 10;
+}
+
+.modal .center input, .modal .center textarea, .modal .center select{
+    background-color: var(--bg-task-color);
+    border: none;
+    outline: none;
+    padding: var(--padding-m);
+    color: var(--primary-color);
+    border-radius: var(--border-radius-s);
+}
+
+.modal .center button{
+    background-color: var(--bg-task-color);
+    border: none;
+    outline: none;
+    padding: var(--padding-m) var(--padding-l);
+    color: var(--primary-color);
+    border-radius: var(--border-radius-m);
+    cursor: pointer;
+    width: fit-content;
+    align-self: center;
+}   
+
+
+.ai-box {
+    padding: 12px 15px;          /* cute padding */
+    margin: 10px auto;           /* centers the box horizontally */
+    border: 2px solid #3d3439;   /* nice dark border */
+    border-radius: 10px;          /* smooth corners */
+    background: #fff0f5;         /* light pink bg */
+    width: 300px;                /* fixed width so it’s not too long */
+    text-align: center;           /* center the text */
+    color: #000000;              /* black text */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* subtle shadow for depth */
+}
+
+.ai-box p {
+    margin: 5px 0;               /* spacing between lines */
+    font-weight: 500;             /* slightly bold for readability */
+}
+section .task-column:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.03);
+}
+
+/* ✅ Column headings style */
+section .task-column .heading .left {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+/* ✅ Tasks style + hover */
+section .task-column .task {
+    background-color: var(--bg-task-color);
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+section .task-column .task:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* ✅ Delete button hover */
+section .task-column .task button:hover {
+    background-color: #ff4c4c;
+}
+
+/* ✅ AI box stays same but pastel highlight on hover */
+.ai-box {
+    background-color: #fff0f5;
+    color: var(--primary-color);
+    transition: all 0.5s ease;
+}
+.ai-box:hover {
+    transform: scale(1.02);
+    background-color: #ffe0f0;
+}
+section .task-column:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.03);
+}
+
+/* ✅ Column headings style */
+section .task-column .heading .left {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+/* ✅ Tasks style + hover */
+section .task-column .task {
+    background-color: var(--bg-task-color);
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+section .task-column .task:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* ✅ Delete button hover */
+section .task-column .task button:hover {
+    background-color: #ff4c4c;
+}
+
+/* ✅ AI box stays same but pastel highlight on hover */
+.ai-box {
+    background-color: #fff0f5;
+    color: var(--primary-color);
+    transition: all 0.5s ease;
+}
+.ai-box:hover {
+    transform: scale(1.02);
+    background-color: #ffe0f0;
+}
