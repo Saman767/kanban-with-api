@@ -30,3 +30,13 @@ Structuring a real-world frontend project
 💖 Fun Touch
 
 Every time you open the board, you get a new motivational suggestion to boost your productivity and keep you going 🚀✨
+🚀 Live Demo:
+https://saman767.github.io/kanban-with-api/
+📌 Author
+
+👩‍💻 Developed by Saman
+✨ Passionate Frontend Developer in progress
+
+🌟 Show Your Support
+
+If you like this project, don’t forget to ⭐ the repo 💖
