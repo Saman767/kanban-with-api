@@ -140,3 +140,15 @@ fetchSuggestion();
 
 // then refresh every 10 seconds (10000ms)
 setInterval(fetchSuggestion, 10000);
+//nav animation
+gsap.from("nav", {
+  y: -50,
+  opacity: 0,
+  duration: 0.6
+});
+
+gsap.from(".ai-box", {
+  
+  duration: 0.6,
+  delay: 0.3
+});

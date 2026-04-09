@@ -11,12 +11,12 @@ html{
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
 }
 :root{
-    --bg-color:#fff8f0;
-    --bg-button-color:#ffd6e0;
-    --bg-task-color:#fff1c1;
+    --bg-color:#D3DAD9;
+    --bg-button-color:#715A5A;
+    --bg-task-color:#57595B;
     --primary-color:#000000;
-    --delete-color:#c1f0ff;
-    --hover-color: #c1f0ff; 
+    --delete-color:#FAF0E6;
+    --hover-color: #19183b1b; 
     /*padding*/
     --nav-padding: 15px 30px;
     --section-padding: 15px 30px;
@@ -40,6 +40,7 @@ main{
     display: flex;
     flex-direction: column;
     background-color: var(--bg-color);
+    font-style: italic;
 }
 nav{
     padding: var(--nav-padding);
@@ -48,7 +49,7 @@ nav{
     align-items: center;
 }
 nav button:hover{
-     background-color: #ffc1d6;
+     background-color: #2728291d;
     background-color: var(--bg-button-color);
     border: none;
     outline: none;
@@ -88,7 +89,7 @@ section .task-column.hover-over{
     background-color: var(--hover-color);
     transform: scale(1.03);
 }
-}
+
 section .task-column .heading{
     width: 100%;
     display:flex;
@@ -175,7 +176,7 @@ section .task-column .task button{
     margin: 10px auto;           /* centers the box horizontally */
     border: 2px solid #3d3439;   /* nice dark border */
     border-radius: 10px;          /* smooth corners */
-    background: #fff0f5;         /* light pink bg */
+    background: #fff0f533;         /* light pink bg */
     width: 300px;                /* fixed width so it’s not too long */
     text-align: center;           /* center the text */
     color: #000000;              /* black text */
@@ -212,18 +213,18 @@ section .task-column .task:hover {
 
 /* ✅ Delete button hover */
 section .task-column .task button:hover {
-    background-color: #ff4c4c;
+    background-color: #ff4c4c13;
 }
 
 /* ✅ AI box stays same but pastel highlight on hover */
 .ai-box {
-    background-color: #fff0f5;
+    background-color: #fff0f534;
     color: var(--primary-color);
     transition: all 0.5s ease;
 }
 .ai-box:hover {
     transform: scale(1.02);
-    background-color: #ffe0f0;
+    background-color:#44444E;
 }
 section .task-column:hover {
     background-color: var(--hover-color);
@@ -251,16 +252,16 @@ section .task-column .task:hover {
 
 /* ✅ Delete button hover */
 section .task-column .task button:hover {
-    background-color: #ff4c4c;
+    background-color:grey;
 }
 
 /* ✅ AI box stays same but pastel highlight on hover */
 .ai-box {
-    background-color: #fff0f5;
+    background-color: grey;
     color: var(--primary-color);
     transition: all 0.5s ease;
 }
 .ai-box:hover {
     transform: scale(1.02);
-    background-color: #ffe0f0;
+    background-color: #45282916;
 }
